@@ -58,8 +58,10 @@ class Navbar extends Component {
             <div className="header_content d-flex flex-row align-items-center">
               <div className="logo_container">
                 <div className="logo">
-                  <img src="images/logo.png" alt="" />
-                  <span>FullStack</span>
+                  <Link to="/" classNameName="nav-link">
+                    <img src="images/logo.png" alt="" />
+                    <span>FullStack</span>
+                  </Link>
                 </div>
               </div>
 
@@ -67,24 +69,24 @@ class Navbar extends Component {
                 <div className="main_nav">
                   <ul className="main_nav_list">
                     <li className="main_nav_item">
-                    <Link to="/" classNameName="nav-link">
+                      <Link to="/" classNameName="nav-link">
                         Home
                       </Link>
                     </li>
                     <li class="main_nav_item">
-                    <Link to="/Popular" classNameName="nav-link">
+                      <Link to="/Popular" classNameName="nav-link">
                         Courses
                       </Link>
                     </li>
 
                     <li class="main_nav_item">
-                    <Link to="/Services" classNameName="nav-link">
+                      <Link to="/Services" classNameName="nav-link">
                         Services
                       </Link>
                     </li>
 
                     <li class="main_nav_item">
-                    <Link to="/Trainers" classNameName="nav-link">
+                      <Link to="/Trainers" classNameName="nav-link">
                         Trainers
                       </Link>
                     </li>

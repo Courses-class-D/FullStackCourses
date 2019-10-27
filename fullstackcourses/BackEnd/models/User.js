@@ -21,5 +21,15 @@ const UserSchema = new Schema({
         default:Date.now
     }
 })
+// let getUser = cb => {
+//     User.find({}, function(err, docs) {
+//       if (err) {
+//         console.log("ERR:", err);
+//       }
+//       console.log("DOCS:", docs);
+//       cb(docs);
+//     });
+//   };
 
 module.exports =User=mongoose.model('users',UserSchema)
+

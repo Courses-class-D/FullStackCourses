@@ -7,7 +7,8 @@ import Navbar from "../components/Navbar";
 export default class Add extends Component {
   state = {
     tutorials: [],
-    tags: []
+    tags: [],
+    user_Id: ""
   };
 
   readTags = () => {
@@ -17,12 +18,20 @@ export default class Add extends Component {
     });
   };
 
+  // componentDidMount() {
+  //   this.readTags();
+  // }
   componentDidMount() {
     this.readTags();
+    const {
+      match: { params }
+    } = this.props;
+    console.log(params.id);
+    this.setState({ user_Id: params.id });
   }
 
   addtutorial = tutorial => {
-    console.log()
+    console.log();
     axios
       .post(`http://localhost:9000/addtutorial`, { tutorial })
       .then(res => {
@@ -46,18 +55,24 @@ export default class Add extends Component {
   };
 
   render() {
+    console.log(this.state.user_Id);
+
     const { addtutorial, addtag } = this;
     const { tutorials, tags } = this.state;
     return (
       <>
-      <div style={{marginTop:"20%"}}>
-      <Navbar/>
+      <div>
+         <Navbar/>
+       
+      <div className="container" style={{marginTop:"20%"}}>
         <AddTutorial
           addtutorial={addtutorial}
           tutorials={tutorials}
           tags={tags}
+          userID={this.state.user_Id}
         />
         <AddTag addtag={addtag} tags={tags} />
+        </div>
         </div>
       </>
     );

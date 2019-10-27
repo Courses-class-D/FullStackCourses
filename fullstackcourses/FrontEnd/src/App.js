@@ -24,7 +24,7 @@ export default class App extends Component {
             <Herobox /> */}
             <Route exact path="/" component={Home} />
             <div className="container">
-              <Route path="/Add" component={Add} />
+              <Route path="/Add/:id" component={Add} />
               <Route path="/Show" component={Show} />
               <Route path="/Trainers" component={Trainers} />
               <Route path="/Services" component={Services} />

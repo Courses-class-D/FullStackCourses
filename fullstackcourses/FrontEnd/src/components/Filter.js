@@ -28,7 +28,7 @@ export default class Filter extends Component {
     return (
       <div>
       <Navbar/>
-      <div className="container" style={{marginTop:"15%"}} >
+      <div className="container" style={{marginTop:"25%"}} >
       
         {this.state.tutorial.map(tutorial => {
           return (
