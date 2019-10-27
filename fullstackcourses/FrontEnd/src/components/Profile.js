@@ -5,6 +5,7 @@ import axios from "axios"
 //import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import { Tabs, Row } from "antd";
+import Navbar from "./Navbar";
 
 class Profile extends Component {
   constructor() {
@@ -49,6 +50,7 @@ class Profile extends Component {
   }
 
   render() {
+   
     const mystyle = {
       display: "block",
       transform: "translate3d(316px, 0px, 0px)",
@@ -57,7 +59,11 @@ class Profile extends Component {
     //const videos=this.props.
     const { first_name, last_name, email } = this.state;
     return (
-      <div className="container">
+      <div>
+         <Navbar/>
+       
+      <div className="container" style={{marginTop:"25%"}}>
+        
         <div className="jumbotron mt-5 bg-primary">
           <div className="col-sm-8 mx-auto">
             <h1 className="text-center">{first_name + " " + last_name}</h1>
@@ -124,6 +130,7 @@ class Profile extends Component {
             <Row gutter={8}>submittedBlogs</Row>
           </Tabs.TabPane> */}
         </Tabs>
+      </div>
       </div>
     );
   }
