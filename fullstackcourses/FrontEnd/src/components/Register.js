@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { register } from "./UserFunctions";
+import Navbar from "./Navbar";
 
 class Register extends Component {
   constructor() {
@@ -8,8 +9,7 @@ class Register extends Component {
       first_name: "",
       last_name: "",
       email: "",
-      password: "",
-      
+      password: ""
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -44,70 +44,98 @@ class Register extends Component {
     }
   }
 
-
-  
-
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 mt-5 mx-auto">
-            <form noValidate onSubmit={this.onSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-              <div className="form-group">
-                <label htmlFor="first_name">First Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="first_name"
-                  placeholder="Enter First Name"
-                  value={this.state.first_name}
-                  onChange={this.onChange}
-                />
+      <React.Fragment>
+        <Navbar/>
+        <link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css"/>
+
+        <section class="signup" style={{marginTop:"15%"}}>
+          <div class="container">
+            <div class="signup-content">
+              <div class="signup-form">
+                <h2 class="form-title">Sign up</h2>
+                <form  noValidate onSubmit={this.onSubmit}class="register-form" id="register-form">
+                  <div class="form-group">
+                    <label for="name">
+                      <i class="zmdi zmdi-account material-icons-name"></i>
+                    </label>
+                    <input
+                      type="text"
+                      name="first_name"
+                      id="first_name"
+                      placeholder="Enter First Name"
+                      value={this.state.first_name}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="name">
+                      <i class="zmdi zmdi-account material-icons-name"></i>
+                    </label>
+                    <input
+                      type="text"
+                      name="last_name"
+                      id="last_name"
+                      placeholder="Enter Last Name"
+                       value={this.state.last_name}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">
+                      <i class="zmdi zmdi-email"></i>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Enter Email"
+                      value={this.state.email}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">
+                      <i class="zmdi zmdi-lock"></i>
+                    </label>
+                    <input
+                      type="password"
+
+                      name="password"
+                      placeholder="Enter Password"
+                      value={this.state.password}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                 
+                  <div class="form-group form-button">
+                    <input
+                      type="submit"
+                      name="signup"
+                      id="signup"
+                      class="form-submit"
+                      value="Register"
+                    />
+                  </div>
+                </form>
               </div>
-              <div className="form-group">
-                <label htmlFor="last_name">Last Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="last_name"
-                  placeholder="Enter Last Name"
-                  value={this.state.last_name}
-                  onChange={this.onChange}
-                />
+              <div class="signup-image">
+                <figure>
+                  <img src="images/signup-image.jpg" alt="sing up image" />
+                </figure>
+                <a href="#" class="signup-image-link">
+                  I am already member
+                </a>
               </div>
-              <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  placeholder="Enter Email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  placeholder="Enter Password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-lg btn-primary btn-block"
-              >
-                Register
-              </button>
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+       <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script> 
+
+      </React.Fragment>
     );
   }
 }

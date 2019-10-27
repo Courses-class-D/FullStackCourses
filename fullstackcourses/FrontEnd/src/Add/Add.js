@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AddTutorial from "./AddTutorial";
 import AddTag from "./AddTag";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 export default class Add extends Component {
   state = {
@@ -49,12 +50,15 @@ export default class Add extends Component {
     const { tutorials, tags } = this.state;
     return (
       <>
+      <div style={{marginTop:"20%"}}>
+      <Navbar/>
         <AddTutorial
           addtutorial={addtutorial}
           tutorials={tutorials}
           tags={tags}
         />
         <AddTag addtag={addtag} tags={tags} />
+        </div>
       </>
     );
   }
