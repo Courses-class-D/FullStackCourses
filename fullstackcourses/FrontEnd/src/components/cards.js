@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ShowCard from "./ShowCard";
+import { Link, withRouter } from "react-router-dom";
 
 export default class cards extends Component {
   state = {
-    tutorial: [],
     tags: []
   };
 
@@ -19,20 +18,29 @@ export default class cards extends Component {
     this.readTags();
   }
 
-  filter = (title) => {
-    axios.get(`http://localhost:9000/filter/${title}`).then(res => {
-      const tutorial = res.data;
-      this.setState({ tutorial });
-      console.log("tttttttt", this.state.tutorial);
-    });
-  };
-
   render() {
-    const { tags } = this.state;
     return (
-        <div>
-          <ShowCard filter={this.filter} tags={tags} tutorial={this.state.tutorial} />
-        </div>
+      <div className=" container-fluid card-deck h-50 mt-5" data-toggle="tooltip" data-placement="top" title="Filter Tutorials On Specific Tag">
+        {this.state.tags.map(tag => {
+          const { label } = tag;
+          return (
+            <div className="card border-warning">
+              <div className="card-body">
+                <Link to={`/Filter/${label}`} key={tag._id}>
+                  <h5 className="card-title">{tag.label}</h5>
+                  <hr className="bg-primary" />
+                </Link>
+                <p>Official Website : </p>
+                <span>
+                  <a tag="a" href={tag.tagLink}>
+                    {tag.tagLink}
+                  </a>
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     );
   }
 }

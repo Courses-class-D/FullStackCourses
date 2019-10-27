@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import jwt_decode from "jwt-decode";
 import Show from "./Show";
 import { Link, withRouter } from "react-router-dom";
-//import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Navbar from "./Navbar";
 
 import { Tabs, Row} from "antd";
 
@@ -36,8 +36,10 @@ class Profile extends Component {
     //const videos=this.props.
     const { first_name, last_name, email } = this.state;
     return (
-      <div className="container">
-        <div className="jumbotron mt-5 bg-primary">
+      <>
+      <Navbar/>
+      <div className="container" style={{marginTop:"20%"}} >
+        <div className="jumbotron bg-primary " >
           <div className="col-sm-8 mx-auto">
             <h1 className="text-center">{first_name + " " + last_name}</h1>
             <center>{email}</center>
@@ -77,6 +79,7 @@ class Profile extends Component {
 
 
       </div>
+      </>
     );
   }
 }

@@ -62,6 +62,14 @@ app.post(`/addTag`, (req, res) => {
   }, obj);
 });
 
+// get filter
+app.get(`/filterId/:ID`, (req, res) => {
+  let obj = req.params.ID;
+  DB.filterId(tutorial => {
+    res.json(tutorial);
+  }, obj);
+});
+
 app.listen(port, function() {
   console.log("Server is running on port: " + port);
 });
