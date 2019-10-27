@@ -1,32 +1,27 @@
-import React, { Component } from "react";
-import Trainers from "../layout/Trainers";
-import Coding from "../layout/Coding";
-import Footer from "../layout/Footer";
-import Cards from "./cards";
-import Herobox from "../layout/Herobox";
-import Popular from "../layout/Popular";
-import Services from "../layout/Services";
-import Navbar from "./Navbar";
-import Header from "../layout/Header";
+import React, { Component } from 'react';
 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <br />
-        <Header />
-        <Herobox />
-        <div className="container"><Cards />
-        
-        <Popular />
-        <Services />
-        <Trainers />
-        <Coding />
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+
+import Cards from './cards';
+import PropTypes from 'prop-types'
+
+ class Home extends Component {
+   
+
+    render() {
+        return (
+            <div className="container">
+                {/* <div className="jumbotron mt-5">
+                    <div className="col-sm-8 mx-auto">Welcom</div>
+                </div> */}
+                <Cards/>
+                {/* <Add/>
+                <Show/> */}
+               
+            </div>
+        )
+    }
 }
-export default Home;
+export default Home
+
+
+

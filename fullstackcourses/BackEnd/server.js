@@ -5,6 +5,7 @@ var app = express();
 const mongoose = require("mongoose");
 const DB = require("./models/Tutorials");
 const tagDB = require("./models/Tag");
+const userDB = require("./models//User");
 var port = process.env.PORT || 9000;
 
 app.use(bodyParser.json());
@@ -40,6 +41,14 @@ app.post(`/addtutorial`, (req, res) => {
 });
 
 // get filter
+app.get(`/filterId/:ID`, (req, res) => {
+  let obj = req.params.ID;
+  DB.filterId(tutorial => {
+    res.json(tutorial);
+  }, obj);
+});
+
+// Filter user id
 app.get(`/filter/:title`, (req, res) => {
   let obj = req.params.title;
   DB.filterDb(tutorial => {
@@ -53,20 +62,18 @@ app.get(`/tagsData`, (req, res) => {
   });
 });
 
+// app.get(`/userData`, (req, res) => {
+//   userDB.getUser(user => {
+//     res.json(user);
+//   });
+// });
+
 // Add Tag
 app.post(`/addTag`, (req, res) => {
   console.log(req.body);
   let obj = req.body;
   tagDB.insertTag(tag => {
     res.json(tag);
-  }, obj);
-});
-
-// get filter
-app.get(`/filterId/:ID`, (req, res) => {
-  let obj = req.params.ID;
-  DB.filterId(tutorial => {
-    res.json(tutorial);
   }, obj);
 });
 

@@ -21,7 +21,8 @@ const tutorialSchema = new Schema({
   Tag: String,
   TypeOfTutorial: String,
   TyoeOfPay: String,
-  SkillLevel: String
+  SkillLevel: String,
+  user_id:String
 });
 
 
@@ -50,7 +51,8 @@ let insertTutorial = (cb, obj) => {
       obj.tutorial.Tag !== "" &&
       obj.tutorial.TypeOfTutorial !== "" &&
       obj.tutorial.TyoeOfPay !== "" &&
-      obj.tutorial.SkillLevel !== ""
+      obj.tutorial.SkillLevel !== ""&&
+      obj.tutorial.user_id!==""
     ) {
       Tutorials.insertMany(
         [
@@ -61,7 +63,8 @@ let insertTutorial = (cb, obj) => {
             Tag: obj.tutorial.Tag,
             TypeOfTutorial: obj.tutorial.TypeOfTutorial,
             TyoeOfPay: obj.tutorial.TyoeOfPay,
-            SkillLevel: obj.tutorial.SkillLevel
+            SkillLevel: obj.tutorial.SkillLevel,
+            user_id:obj.tutorial.user_id
           }
         ],
   
@@ -87,8 +90,20 @@ let filterDb = (cb , title) => {
   });
 }
 
+let filterId = (cb,ID) => {
+  Tutorials.find({ user_id : ID}, function(err, docs) {
+    if (err) {
+      console.log("ERR:", err);
+    }
+    console.log("DOCS:", docs);
+    cb(docs);
+  });
+}
+
+
 module.exports = {
   getTutorials,
   insertTutorial,
-  filterDb
+  filterDb,
+  filterId
 };

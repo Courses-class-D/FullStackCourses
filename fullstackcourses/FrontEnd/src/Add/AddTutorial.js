@@ -13,8 +13,7 @@ export default class AddTutorial extends Component {
     TypeOfTutorial: "",
     TyoeOfPay: "",
     SkillLevel: "",
-    btnVale: "Add To Favourite"
-
+    btnVale: "Add To Favourite",
   };
 
   changeFav = (btnVale) => {
@@ -30,6 +29,7 @@ export default class AddTutorial extends Component {
   }
 
   render() {
+    console.log(this.props.userID);
     const { addtutorial, tutorials, tags } = this.props;
     // const {changeValues}=this
 
@@ -160,14 +160,14 @@ export default class AddTutorial extends Component {
           type="submit"
           onClick={() => {
             addtutorial({
-              id: (tutorials.id = uuid()),
               Title: this.state.Title,
               Link: this.state.Link,
               Description: this.state.Description,
               Tag: this.state.Tag,
               TypeOfTutorial: this.state.TypeOfTutorial,
               TyoeOfPay: this.state.TyoeOfPay,
-              SkillLevel: this.state.SkillLevel
+              SkillLevel: this.state.SkillLevel,
+              user_id:this.props.userID
             });
 
             this.setState({
@@ -177,7 +177,7 @@ export default class AddTutorial extends Component {
               Tag: "",
               TypeOfTutorial: "",
               TyoeOfPay: "",
-              SkillLevel: ""
+              SkillLevel: "",
             });
           }}
         >
