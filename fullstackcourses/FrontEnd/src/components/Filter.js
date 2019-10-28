@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 
-
 export default class Filter extends Component {
   state = {
     tutorial: []
@@ -27,39 +26,43 @@ export default class Filter extends Component {
   render() {
     return (
       <div>
-      <Navbar/>
-      <div className="container" style={{marginTop:"25%"}} >
-      
-        {this.state.tutorial.map(tutorial => {
-          return (
-            <div
-              className="container bg-info border border-danger"
-              key={tutorial._id} 
-            >
-              <button type="button" className="close" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h3>{tutorial.Title}</h3>
-              <hr className="bg-primary" />
-              <h5>{tutorial.Link}</h5>
-              <div className="row">
-                <span className="col">
-                  Type of Tutorial : {tutorial.TypeOfTutorial}
-                </span>
-                <span className="col">Type of Pay : {tutorial.TyoeOfPay}</span>
-                <span className="col">Skill Level : {tutorial.SkillLevel}</span>
+        <Navbar />
+        <div className="container" style={{ marginTop: "25%" }}>
+          {this.state.tutorial.map(tutorial => {
+            return (
+              <div className=" container bg-light text-dark border rounded shadow p-3 mb-5 bg-white rounded  p-5 mt-2 ">
+                <h3 className="favth-panel-heading">{tutorial.Title}</h3>
+                <hr className="bg-primary" />
+                <h5>
+                  Tutorial Link : <a>{tutorial.Link}</a>
+                </h5>
+                <div className="favth-panel-body row">
+                  <span className="col">
+                    Type of Tutorial : {tutorial.TypeOfTutorial}
+                  </span>
+                  <span className="col">
+                    Type of Pay : {tutorial.TyoeOfPay}
+                  </span>
+                  <t />
+                  <span className="col">
+                    Skill Level : {tutorial.SkillLevel}
+                  </span>
+                  <t />
+                </div>
+                <label className="badge badge-pill badge-warning">
+                  {tutorial.Tag}
+                </label>
+                <button
+                  type="button"
+                  className="btn-primary float-right"
+                  onClick={this.changeFav}
+                >
+                  {this.state.btnVale}
+                </button>
               </div>
-              <label className="badge badge-pill badge-warning">
-                {tutorial.Tag}
-              </label>
-              <button
-                type="button"
-                className="btn-primary float-right"
-              ></button>
-            </div>
-          )
-        })}
-      </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

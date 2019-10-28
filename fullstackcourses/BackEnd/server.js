@@ -39,6 +39,13 @@ app.post(`/addtutorial`, (req, res) => {
   }, obj);
 });
 
+app.delete(`/delete/:id`, (req, res) => {
+  let obj = req.params.id;
+  DB.remove(tutorial => {
+    res.json(tutorial);
+  }, obj);
+});
+
 // get filter
 app.get(`/filter/:title`, (req, res) => {
   let obj = req.params.title;
