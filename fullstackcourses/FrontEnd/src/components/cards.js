@@ -20,7 +20,12 @@ export default class cards extends Component {
 
   render() {
     return (
-      <div className=" container-fluid card-deck h-50 mt-5" data-toggle="tooltip" data-placement="top" title="Filter Tutorials On Specific Tag">
+      <div
+        className=" container-fluid card-deck h-50 mt-5"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Filter Tutorials On Specific Tag"
+      >
         {this.state.tags.map(tag => {
           const { label } = tag;
           return (

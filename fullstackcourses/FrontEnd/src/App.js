@@ -11,7 +11,6 @@ import Trainers from "./layout/Trainers";
 import Services from "./layout/Services";
 import Popular from "./layout/Popular";
 
-
 export default class App extends Component {
   render() {
     return (

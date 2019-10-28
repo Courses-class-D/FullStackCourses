@@ -11,8 +11,6 @@ db.once("open", function() {
   console.log("____________________________");
 });
 
-// var SubmitedBy = require('./User');
-
 const tutorialSchema = new Schema({
   Title: String,
   Link: String,
@@ -41,8 +39,6 @@ let getTutorials = cb => {
 };
 
 let insertTutorial = (cb, obj) => {
-  // console.log("OBJ", obj);
-
   if (
     obj.tutorial.Title !== "" &&
     obj.tutorial.Link !== "" &&
@@ -65,14 +61,12 @@ let insertTutorial = (cb, obj) => {
           SkillLevel: obj.tutorial.SkillLevel,
           user_id: obj.tutorial.user_id
         }
-        
       ],
 
       function(err, docs) {
         if (err) {
           console.log("ERR:", err);
         }
-        console.log("DOCS:", docs);
         getTutorials(cb);
       }
     );
@@ -84,7 +78,6 @@ let filterDb = (cb, title) => {
     if (err) {
       console.log("ERR:", err);
     }
-    console.log("DOCS:", docs);
     cb(docs);
   });
 };
@@ -94,7 +87,15 @@ let filterId = (cb, ID) => {
     if (err) {
       console.log("ERR:", err);
     }
-    console.log("DOCS:", docs);
+    cb(docs);
+  });
+};
+
+let remove = (cb, ID) => {
+  Tutorials.remove({ _id: ID }, function(err, docs) {
+    if (err) {
+      console.log("ERR:", err);
+    }
     cb(docs);
   });
 };
@@ -103,5 +104,6 @@ module.exports = {
   getTutorials,
   insertTutorial,
   filterDb,
-  filterId
+  filterId,
+  remove
 };
