@@ -92,10 +92,11 @@ let filterId = (cb, ID) => {
 };
 
 let remove = (cb, ID) => {
-  Tutorials.remove({ _id: ID }, function(err, docs) {
+  Tutorials.deleteOne({ _id: ID }, function(err, docs) {
     if (err) {
       console.log("ERR:", err);
     }
+    console.log("DOCS:",docs)
     cb(docs);
   });
 };

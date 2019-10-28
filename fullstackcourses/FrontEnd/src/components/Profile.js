@@ -42,8 +42,8 @@ class Profile extends Component {
   };
 
   delete = ID => {
-    axios.delete(`http://localhost:9000/delete/${ID}`).then(res => {
-      const tutorials = res.data;
+    axios.delete(`http://localhost:9000/deleteTut/${ID}`).then(res => {
+      const Tutorials = res.data;
     });
   };
 

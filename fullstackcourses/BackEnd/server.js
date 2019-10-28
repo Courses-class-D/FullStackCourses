@@ -40,15 +40,13 @@ app.post(`/addtutorial`, (req, res) => {
   }, obj);
 });
 
-app.delete(
-  `/delete
-/:id`,
-  (req, res) => {
-    DB.remove(tutorial => {
-      res.json(tutorial);
-    }, obj);
-  }
-);
+app.delete(`/deleteTut/:id`, (req, res) => {
+  let obj = req.params.id;
+  console.log("obg :", obj);
+  DB.remove(tutorial => {
+    res.json(tutorial);
+  }, obj);
+});
 
 // get filter
 app.get(`/filter/:title`, (req, res) => {
