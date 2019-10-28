@@ -4,7 +4,7 @@ export default class header extends Component {
     render() {
         return (
   <React.Fragment>
-  <div id="Home" class="home">
+  <div id="Home" class="home" style={{ marginTop: "-1.5%" }}>
     
     <div class="hero_slider_container">
       <div class="hero_slider owl-carousel">

@@ -14,9 +14,7 @@ export default class Herobox extends Component {
                     <img src="images/earth-globe.svg" class="svg" alt="" />
                     <div class="hero_box_content">
                       <h2 class="hero_box_title">Online Courses</h2>
-                      <Link to="/Show" classNameName="nav-link">
-                        View more
-                      </Link>{" "}
+                    
                     </div>
                   </div>
                 </div>
@@ -26,9 +24,7 @@ export default class Herobox extends Component {
                     <img src="images/books.svg" class="svg" alt="" />
                     <div class="hero_box_content">
                       <h2 class="hero_box_title">CodingAcademy</h2>
-                      <Link to="/Tutorial" classNameName="nav-link">
-                        View more
-                      </Link>{" "}
+                     
                     </div>
                   </div>
                 </div>
@@ -38,9 +34,7 @@ export default class Herobox extends Component {
                     <img src="images/professor.svg" class="svg" alt="" />
                     <div class="hero_box_content">
                       <h2 class="hero_box_title">Trainers</h2>
-                      <a href="teachers.html" class="hero_box_link">
-                        view more
-                      </a>
+                    
                     </div>
                   </div>
                 </div>

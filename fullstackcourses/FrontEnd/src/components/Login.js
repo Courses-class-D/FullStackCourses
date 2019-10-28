@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { login } from './UserFunctions'
+import { Link, withRouter } from "react-router-dom";
+
 import Navbar from './Navbar'
 
 class Login extends Component {
@@ -49,7 +51,9 @@ class Login extends Component {
             <div class="signin-content">
                 <div class="signin-image">
                     <figure><img src="images/signin-image.jpg" alt="sing up image"/></figure>
-                    <a href="#" class="signup-image-link">Create an account</a>
+                    <Link to="/Register" classNameName="nav-link">
+                    Create an account
+          </Link>
                 </div>
 
                 <div class="signin-form">

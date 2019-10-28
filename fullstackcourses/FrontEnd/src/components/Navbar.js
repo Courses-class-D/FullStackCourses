@@ -69,7 +69,8 @@ class Navbar extends Component {
                 <div className="main_nav">
                   <ul className="main_nav_list">
                     <li className="main_nav_item">
-                      <Link to="/" classNameName="nav-link">
+                      <Link to="/" classNameName="nav-link" >
+                      
                         Home
                       </Link>
                     </li>
@@ -113,57 +114,42 @@ class Navbar extends Component {
             </div>
 
             <div class="menu_inner menu_mm">
+            
               <div class="menu menu_mm">
+              
                 <ul class="menu_list menu_mm">
+                <div className="logo_container">
+                <div className="logo">
+                  <Link to="/" classNameName="nav-link">
+                    <img src="images/logo.png" alt="" />
+                    <span>FullStack</span>
+                  </Link>
+                </div>
+              </div>
                   <li class="menu_item menu_mm">
-                    <a href="#Home">Home</a>
+                  <Link to="/" classNameName="nav-link">
+                        Home
+                      </Link>
                   </li>
                   <li class="menu_item menu_mm">
-                    <a href="#">About us</a>
+                  <Link to="/Popular" classNameName="nav-link">
+                        Courses
+                      </Link>
                   </li>
                   <li class="menu_item menu_mm">
-                    <a href="courses.html">Courses</a>
+                  <Link to="/Services" classNameName="nav-link">
+                        Services
+                      </Link>
                   </li>
                   <li class="menu_item menu_mm">
-                    <a href="elements.html">Elements</a>
+                  <Link to="/Trainers" classNameName="nav-link">
+                        Trainers
+                      </Link>
                   </li>
-                  <li class="menu_item menu_mm">
-                    <a href="news.html">News</a>
-                  </li>
-                  <li class="menu_item menu_mm">
-                    <a href="contact.html">Contact</a>
-                  </li>
+                
+                 
                 </ul>
 
-                <div class="menu_social_container menu_mm">
-                  <ul class="menu_social menu_mm">
-                    <li class="menu_social_item menu_mm">
-                      <a href="#">
-                        <i class="fab fa-pinterest"></i>
-                      </a>
-                    </li>
-                    <li class="menu_social_item menu_mm">
-                      <a href="#">
-                        <i class="fab fa-linkedin-in"></i>
-                      </a>
-                    </li>
-                    <li class="menu_social_item menu_mm">
-                      <a href="#">
-                        <i class="fab fa-instagram"></i>
-                      </a>
-                    </li>
-                    <li class="menu_social_item menu_mm">
-                      <a href="#">
-                        <i class="fab fa-facebook-f"></i>
-                      </a>
-                    </li>
-                    <li class="menu_social_item menu_mm">
-                      <a href="#">
-                        <i class="fab fa-twitter"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>

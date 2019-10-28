@@ -48,7 +48,7 @@ $(document).ready(function()
 	2. Set Header
 
 	*/
-
+	
 	function setHeader()
 	{
 		if(window.innerWidth < 992)

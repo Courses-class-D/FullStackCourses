@@ -12,15 +12,20 @@ import Services from "./layout/Services";
 import Popular from "./layout/Popular";
 
 export default class App extends Component {
+
+  
   render() {
+
+    
     return (
       <>
         <Router>
-          <div className="App">
+         
             {/* <Navbar />
             <br />
             <Header />
             <Herobox /> */}
+            
             <Route exact path="/" component={Home} />
             <div className="container">
               <Route path="/Add/:id" component={Add} />
@@ -32,13 +37,14 @@ export default class App extends Component {
               <Route exact path="/Popular" component={Popular} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/profile" component={Profile} />
+            
             </div>
             {/* <Popular />
             <Services />
             <Trainers />
             <Coding />
             <Footer /> */}
-          </div>
+        
         </Router>
       </>
     );
