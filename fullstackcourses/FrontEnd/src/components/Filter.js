@@ -34,7 +34,7 @@ export default class Filter extends Component {
                 <h3 className="favth-panel-heading">{tutorial.Title}</h3>
                 <hr className="bg-primary" />
                 <h5>
-                  Tutorial Link : <a>{tutorial.Link}</a>
+                Visit Tutorial :  <a href= {tutorial.Link} target="_blank">{tutorial.Link}</a>
                 </h5>
                 <div className="favth-panel-body row">
                   <span className="col">
