@@ -11,6 +11,7 @@ export default class header extends Component {
         
        
         <div class="hero_slide">
+
           <div class="hero_slide_background" style={{backgroundImage:"url(images/slider_background.jpg)"}}></div>
           <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
             <div class="hero_slide_content text-center">

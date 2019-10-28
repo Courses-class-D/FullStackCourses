@@ -42,8 +42,8 @@ class Profile extends Component {
   };
 
   delete = ID => {
-    axios.delete(`http://localhost:9000/delete/${ID}`).then(res => {
-      const tutorials = res.data;
+    axios.delete(`http://localhost:9000/deleteTut/${ID}`).then(res => {
+      const Tutorials = res.data;
     });
   };
 
@@ -182,8 +182,8 @@ class Profile extends Component {
                       <h3 className="favth-panel-heading">{tutorial.Title}</h3>
                       <hr className="bg-primary" />
                       <h5>
-                        Tutorial Link : <a>{tutorial.Link}</a>
-                      </h5>
+                          Visit Tutorial : <a href={tutorial.Link}>{tutorial.Link}</a>     
+                       </h5>
                       <div className="favth-panel-body row">
                         <span className="col">
                           Type of Tutorial : {tutorial.TypeOfTutorial}
