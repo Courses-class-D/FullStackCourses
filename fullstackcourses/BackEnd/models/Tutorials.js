@@ -100,8 +100,19 @@ let remove = (cb, ID) => {
   });
 };
 
+getFavTutorials = (cb,ID) => {
+  Tutorials.find({ _id: ID }, function(err, docs) {
+    if (err) {
+      console.log("ERR:", err);
+    }
+    console.log("DOCS:",docs)
+    cb(docs);
+  });
+}
+
 module.exports = {
   getTutorials,
+  getFavTutorials,
   insertTutorial,
   filterDb,
   filterId,

@@ -5,6 +5,7 @@ var app = express();
 const mongoose = require("mongoose");
 const DB = require("./models/Tutorials");
 const tagDB = require("./models/Tag");
+const favDB = require("./models/Favorites")
 var port = process.env.PORT || 9000;
 
 app.use(bodyParser.json());
@@ -39,12 +40,15 @@ app.post(`/addtutorial`, (req, res) => {
   }, obj);
 });
 
-app.delete(`/delete/:id`, (req, res) => {
-  let obj = req.params.id;
-  DB.remove(tutorial => {
-    res.json(tutorial);
-  }, obj);
-});
+app.delete(
+  `/delete
+/:id`,
+  (req, res) => {
+    DB.remove(tutorial => {
+      res.json(tutorial);
+    }, obj);
+  }
+);
 
 // get filter
 app.get(`/filter/:title`, (req, res) => {
@@ -73,6 +77,34 @@ app.post(`/addTag`, (req, res) => {
 app.get(`/filterId/:ID`, (req, res) => {
   let obj = req.params.ID;
   DB.filterId(tutorial => {
+    res.json(tutorial);
+  }, obj);
+});
+
+app.post(`/favorite/:id`, (req, res) => {
+  let obj = req.params;
+  favDB.insertFavorites(tutorial => {
+    res.json(tutorial);
+  }, obj);
+});
+
+app.get(`/getFav`, (req, res) => {
+  favDB.getFavorites(favorites => {
+    res.json(favorites);
+  });
+});
+
+app.get("/getFavTut/:id", (req, res) => {
+  let obj = req.params.id;
+  DB.getFavTutorials(tutorial => {
+    res.json(tutorial);
+  }, obj);
+});
+
+// delete
+app.delete("/deleteFav/:id", (req, res) => {
+  let obj = req.params.id;
+  favDB.remove(tutorial => {
     res.json(tutorial);
   }, obj);
 });

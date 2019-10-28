@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import uuid from "uuid";
 import { Radio } from "antd";
+import { Link, withRouter } from "react-router-dom";
 
 // import {inputLink} from "react-input-link"
 
@@ -35,6 +36,7 @@ export default class AddTutorial extends Component {
 
     return (
       <div className="container-fluid  ">
+        <h3>Add Tutorials</h3>
         {/* <input name="Title" placeholder="Tutorial Title" value={this.state.Title} onChange={this.changeValues} /> */}
         <div class="input-group mt-2 ">
           <div class="input-group-prepend">
@@ -156,7 +158,7 @@ export default class AddTutorial extends Component {
           </Radio.Group>
         </div>
         <button
-          className="mt-2 col-md-3"
+         className=" btn btn-outline-info   waves-effect mt-2 col-md-2 "
           type="submit"
           onClick={() => {
             addtutorial({
@@ -181,7 +183,10 @@ export default class AddTutorial extends Component {
             });
           }}
         >
+          <Link to="/profile" classNameName="nav-link">
           Add New Tutorial
+
+          </Link>
         </button>
         <hr />
       </div>

@@ -23,6 +23,17 @@ export default class Filter extends Component {
       });
   };
 
+  AddFav = id => {
+    axios
+      .post(`http://localhost:9000/favorite/${id}`)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+
   render() {
     return (
       <div>
@@ -34,7 +45,10 @@ export default class Filter extends Component {
                 <h3 className="favth-panel-heading">{tutorial.Title}</h3>
                 <hr className="bg-primary" />
                 <h5>
-                Visit Tutorial :  <a href= {tutorial.Link} target="_blank">{tutorial.Link}</a>
+                  Visit Tutorial :{" "}
+                  <a href={tutorial.Link} target="_blank">
+                    {tutorial.Link}
+                  </a>
                 </h5>
                 <div className="favth-panel-body row">
                   <span className="col">
@@ -54,10 +68,10 @@ export default class Filter extends Component {
                 </label>
                 <button
                   type="button"
-                  className="btn-primary float-right"
-                  onClick={this.changeFav}
+                  class="btn btn-primary float-right"
+                  onClick={() => this.AddFav(tutorial._id)}
                 >
-                  {this.state.btnVale}
+                  Add To Favourite
                 </button>
               </div>
             );

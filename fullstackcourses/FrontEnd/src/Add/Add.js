@@ -36,6 +36,8 @@ export default class Add extends Component {
       .post(`http://localhost:9000/addtutorial`, { tutorial })
       .then(res => {
         this.setState({ tutorials: res.data });
+        alert("Added Successfully !!")
+        
         this.readTutorials();
       })
       .catch(function(error) {
@@ -47,7 +49,10 @@ export default class Add extends Component {
     axios
       .post(`http://localhost:9000/addTag`, tag)
       .then(res => {
+        
         this.setState({ tags: res.data });
+        alert("Added Successfully !!")
+
       })
       .catch(function(error) {
         console.log(error);

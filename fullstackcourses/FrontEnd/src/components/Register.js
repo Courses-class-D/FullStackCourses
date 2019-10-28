@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { register } from "./UserFunctions";
+import { Link, withRouter } from "react-router-dom";
+
 import Navbar from "./Navbar";
 
 class Register extends Component {
@@ -126,7 +128,10 @@ class Register extends Component {
                   <img src="images/signup-image.jpg" alt="sing up image" />
                 </figure>
                 <a href="#" class="signup-image-link">
+                  
+                  <Link to="/login" classNameName="nav-link">
                   I am already member
+          </Link>
                 </a>
               </div>
             </div>
