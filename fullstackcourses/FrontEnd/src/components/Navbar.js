@@ -69,10 +69,13 @@ class Navbar extends Component {
                 <div className="main_nav">
                   <ul className="main_nav_list">
                     <li className="main_nav_item">
-                      <Link to="/" classNameName="nav-link" >
                       
+                      <Link to="/" classNameName="nav-link" >
                         Home
+
                       </Link>
+
+                      
                     </li>
                     <li class="main_nav_item">
                       <Link to="/Popular" classNameName="nav-link">
