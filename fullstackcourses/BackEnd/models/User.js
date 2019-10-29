@@ -1,6 +1,12 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
+mongoose.connect('mongodb+srv://hadeel:5682165@coursescluster-wekvq.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true})
+.then( () => {
+    console.log('Connection to the Atlas Cluster is successful!')
+  })
+  .catch( (err) => console.error(err));
+
 const UserSchema = new Schema({
     first_name: {
         type:String

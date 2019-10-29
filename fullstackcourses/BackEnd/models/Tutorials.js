@@ -1,7 +1,15 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+mongoose.connect('mongodb+srv://hadeel:5682165@coursescluster-wekvq.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true})
+.then( () => {
+  console.log('Connection to the Atlas Cluster is successful!')
+})
+.catch( (err) => console.error(err));
+
 const db = mongoose.connection;
+
+
 db.on("error", function() {
   console.log("mongoose connection error");
   console.log("____________________________");
@@ -10,6 +18,9 @@ db.once("open", function() {
   console.log("mongoose connected successfully");
   console.log("____________________________");
 });
+
+// mongoose.connect('mongodb+srv://hadeel:5682165@coursescluster-wekvq.mongodb.net/test?retryWrites=true&w=majority')
+
 
 const tutorialSchema = new Schema({
   Title: String,
@@ -117,5 +128,5 @@ module.exports = {
   insertTutorial,
   filterDb,
   filterId,
-  remove
+  remove,
 };
