@@ -13,8 +13,9 @@ export default class Herobox extends Component {
                   <div class="hero_box d-flex flex-row align-items-center justify-content-start">
                     <img src="images/earth-globe.svg" class="svg" alt="" />
                     <div class="hero_box_content">
-                      <h2 class="hero_box_title">Online Courses</h2>
-                    
+                      <a href="#popular">
+                        <h2 class="hero_box_title">Online Courses</h2>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -23,8 +24,9 @@ export default class Herobox extends Component {
                   <div class="hero_box d-flex flex-row align-items-center justify-content-start">
                     <img src="images/books.svg" class="svg" alt="" />
                     <div class="hero_box_content">
-                      <h2 class="hero_box_title">CodingAcademy</h2>
-                     
+                      <a href="#popular2">
+                        <h2 class="hero_box_title">CodingAcademy</h2>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -33,8 +35,9 @@ export default class Herobox extends Component {
                   <div class="hero_box d-flex flex-row align-items-center justify-content-start">
                     <img src="images/professor.svg" class="svg" alt="" />
                     <div class="hero_box_content">
-                      <h2 class="hero_box_title">Trainers</h2>
-                    
+                      <a href="#Trainers">
+                        <h2 class="hero_box_title">Trainers</h2>
+                      </a>
                     </div>
                   </div>
                 </div>

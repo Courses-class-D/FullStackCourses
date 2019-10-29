@@ -69,13 +69,9 @@ class Navbar extends Component {
                 <div className="main_nav">
                   <ul className="main_nav_list">
                     <li className="main_nav_item">
-                      
-                      <Link to="/" classNameName="nav-link" >
+                      <Link to="/" classNameName="nav-link">
                         Home
-
                       </Link>
-
-                      
                     </li>
                     <li class="main_nav_item">
                       <Link to="/Popular" classNameName="nav-link">
@@ -117,42 +113,37 @@ class Navbar extends Component {
             </div>
 
             <div class="menu_inner menu_mm">
-            
               <div class="menu menu_mm">
-              
                 <ul class="menu_list menu_mm">
-                <div className="logo_container">
-                <div className="logo">
-                  <Link to="/" classNameName="nav-link">
-                    <img src="images/logo.png" alt="" />
-                    <span>FullStack</span>
-                  </Link>
-                </div>
-              </div>
-                  <li class="menu_item menu_mm">
-                  <Link to="/" classNameName="nav-link">
-                        Home
+                  <div className="logo_container">
+                    <div className="logo">
+                      <Link to="/" classNameName="nav-link">
+                        <img src="images/logo.png" alt="" />
+                        <span>FullStack</span>
                       </Link>
+                    </div>
+                  </div>
+                  <li class="menu_item menu_mm">
+                    <Link to="/" classNameName="nav-link">
+                      Home
+                    </Link>
                   </li>
                   <li class="menu_item menu_mm">
-                  <Link to="/Popular" classNameName="nav-link">
-                        Courses
-                      </Link>
+                    <Link to="/Popular" classNameName="nav-link">
+                      Courses
+                    </Link>
                   </li>
                   <li class="menu_item menu_mm">
-                  <Link to="/Services" classNameName="nav-link">
-                        Services
-                      </Link>
+                    <Link to="/Services" classNameName="nav-link">
+                      Services
+                    </Link>
                   </li>
                   <li class="menu_item menu_mm">
-                  <Link to="/Trainers" classNameName="nav-link">
-                        Trainers
-                      </Link>
+                    <Link to="/Trainers" classNameName="nav-link">
+                      Trainers
+                    </Link>
                   </li>
-                
-                 
                 </ul>
-
               </div>
             </div>
           </div>

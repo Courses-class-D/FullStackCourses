@@ -49,16 +49,24 @@ class Register extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar/>
-        <link rel="stylesheet" href="css/style.css"/>
-<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css"/>
+        <Navbar />
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+          rel="stylesheet"
+          href="fonts/material-icon/css/material-design-iconic-font.min.css"
+        />
 
-        <section class="signup" style={{marginTop:"15%"}}>
+        <section class="signup" style={{ marginTop: "15%" }}>
           <div class="container">
             <div class="signup-content">
               <div class="signup-form">
                 <h2 class="form-title">Sign up</h2>
-                <form  noValidate onSubmit={this.onSubmit}class="register-form" id="register-form">
+                <form
+                  noValidate
+                  onSubmit={this.onSubmit}
+                  class="register-form"
+                  id="register-form"
+                >
                   <div class="form-group">
                     <label for="name">
                       <i class="zmdi zmdi-account material-icons-name"></i>
@@ -81,7 +89,7 @@ class Register extends Component {
                       name="last_name"
                       id="last_name"
                       placeholder="Enter Last Name"
-                       value={this.state.last_name}
+                      value={this.state.last_name}
                       onChange={this.onChange}
                     />
                   </div>
@@ -104,14 +112,13 @@ class Register extends Component {
                     </label>
                     <input
                       type="password"
-
                       name="password"
                       placeholder="Enter Password"
                       value={this.state.password}
                       onChange={this.onChange}
                     />
                   </div>
-                 
+
                   <div class="form-group form-button">
                     <input
                       type="submit"
@@ -128,18 +135,16 @@ class Register extends Component {
                   <img src="images/signup-image.jpg" alt="sing up image" />
                 </figure>
                 <a href="#" class="signup-image-link">
-                  
                   <Link to="/login" classNameName="nav-link">
-                  I am already member
-          </Link>
+                    I am already member
+                  </Link>
                 </a>
               </div>
             </div>
           </div>
         </section>
-       <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script> 
-
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="js/main.js"></script>
       </React.Fragment>
     );
   }

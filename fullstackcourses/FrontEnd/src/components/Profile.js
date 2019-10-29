@@ -65,7 +65,7 @@ class Profile extends Component {
     console.log(ID);
     axios.delete(`http://localhost:9000/deleteFav/${ID}`).then(res => {
       const Favourites = res.data;
-      window.location.reload()
+      window.location.reload();
     });
   };
 
@@ -182,8 +182,9 @@ class Profile extends Component {
                       <h3 className="favth-panel-heading">{tutorial.Title}</h3>
                       <hr className="bg-primary" />
                       <h5>
-                          Visit Tutorial : <a href={tutorial.Link}>{tutorial.Link}</a>     
-                       </h5>
+                        Visit Tutorial :{" "}
+                        <a href={tutorial.Link}>{tutorial.Link}</a>
+                      </h5>
                       <div className="favth-panel-body row">
                         <span className="col">
                           Type of Tutorial : {tutorial.TypeOfTutorial}

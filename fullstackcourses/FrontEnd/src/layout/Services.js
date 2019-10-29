@@ -6,8 +6,8 @@ export default class Services extends Component {
     return (
       <React.Fragment>
         <div id="Services" class="services page_section">
-          <Navbar/>
-          <div class="container" style={{marginTop:"10%"}}>
+          <Navbar />
+          <div class="container" style={{ marginTop: "10%" }}>
             <div class="row">
               <div class="col">
                 <div class="section_title text-center">

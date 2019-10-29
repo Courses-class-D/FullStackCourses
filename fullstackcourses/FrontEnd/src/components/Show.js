@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Courses from "./Courses";
 import Navbar from "./Navbar";
-import Footer from "../layout/Footer";
-
 
 export default class Show extends Component {
   state = {
@@ -22,7 +20,7 @@ export default class Show extends Component {
 
   render() {
     return (
-      <div style={{marginTop:"20%"}}>
+      <div style={{ marginTop: "20%" }}>
         <Navbar />
         <Courses tutorials={this.state.tutorials} />
       </div>

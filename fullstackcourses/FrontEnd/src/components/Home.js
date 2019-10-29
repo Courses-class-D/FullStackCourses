@@ -17,12 +17,12 @@ class Home extends Component {
         <br />
         <Header />
         <Herobox />
-        <div className="container"><Cards />
-        
-        <Popular />
-        <Services />
-        <Trainers />
-        <Coding />
+        <div className="container">
+          <Cards />
+          <Popular />
+          <Services />
+          <Trainers />
+          <Coding />
         </div>
         <Footer />
       </div>
